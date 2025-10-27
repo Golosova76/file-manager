@@ -1,0 +1,23 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "File manager task for RSSchool",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Golosova76/file-manager.git"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "author": "Golosova76",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Golosova76/file-manager/issues"
+  },
+  "homepage": "https://github.com/Golosova76/file-manager#readme"
+}
