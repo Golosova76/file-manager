@@ -1,5 +1,7 @@
 import { homedir } from "node:os";
 import {goUp} from "./commands/up.js";
+import {cdGo} from "./commands/cd.js";
+import {list} from "./commands/ls.js";
 
 export class Navigation {
     constructor() {
@@ -22,5 +24,14 @@ export class Navigation {
     navigateUp() {
         // Передаем текущий объект Navigation в функцию goUp
         return goUp(this);
+    }
+
+    navigateCd(argument) {
+        return cdGo(argument);
+    }
+
+    printLs() {
+        // Передаем текущий объект Navigation в функцию list
+        return list(this);
     }
 }

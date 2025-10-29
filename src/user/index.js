@@ -27,5 +27,14 @@ export default class User {
     sayGoodbye() {
         this.#goodbye(this.user);
     }
+
+    handleInvalidInput() {
+        console.log('Invalid input');
+    }
+
+    handleOperationError(error) {
+        console.log('Operation failed');
+        // console.error(error.message); // можно включить при отладке
+    }
 }
 
