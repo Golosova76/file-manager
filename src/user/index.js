@@ -1,4 +1,4 @@
-import { EOL } from "node:os";
+import os, { EOL } from "node:os";
 
 const USER_NAME_PREFIX = '--username';
 
@@ -10,6 +10,7 @@ export default class User {
 
     #welcome(username) {
         console.log(`Welcome to the File Manager, ${username}!`);
+        process.stdout.write(os.EOL);
     }
 
     #goodbye(username) {

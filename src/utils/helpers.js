@@ -1,3 +1,5 @@
+import path from "node:path";
+
 export function tokenizeUserInput(userInput) {
     // 1) Нормализуем ввод
     const raw = (userInput ?? '').trim();
@@ -26,4 +28,15 @@ export function tokenizeUserInput(userInput) {
 
     // 6) Возвращаем: [команда, ...аргументы] (уже без внешних кавычек)
     return tokens;
+}
+
+/**
+ * @param {string} workPathDir - текущая рабочая директория
+ * @param {string} targetPath - путь, который нужно разрешить
+ * @returns {string} Абсолютный путь к файлу
+ */
+export function resolvePath(workPathDir, targetPath) {
+    return path.isAbsolute(targetPath)
+        ? targetPath
+        : path.resolve(workPathDir, targetPath);
 }

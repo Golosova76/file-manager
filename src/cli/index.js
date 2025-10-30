@@ -3,11 +3,14 @@ import { Navigation } from "../navigation-pwd/index.js";
 import * as readline from "node:readline";
 import { COMMANDS_MAP } from "../utils/constants.js";
 import { tokenizeUserInput } from "../utils/helpers.js";
+import {FileOperations} from "../file-operations/index.js";
+import os from "node:os";
 
 export default class Cli {
     constructor() {
         this.user = new User();
         this.navigation = new Navigation();
+        this.fileOperations = new FileOperations();
 
         this.rl = readline.createInterface({
             input: process.stdin,
@@ -22,6 +25,7 @@ export default class Cli {
     #printCurrentDirectory() {
         const workDirPath = this.navigation.getCurrentDir();
         console.log(`You are currently in ${workDirPath}`);
+        process.stdout.write(os.EOL);
     }
 
     start() {
@@ -55,6 +59,17 @@ export default class Cli {
                 case 'ls':
                     await this.navigation.printLs();
                     break;
+                // file-operations
+                case 'cat':{
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await this.fileOperations.cat(workPathDir, args[0]);
+                    break;
+                }
+                case 'add':{
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await this.fileOperations.add(workPathDir, args[0]);
+                    break;
+                }
                 // systems
                 case '.exit':
                     this.user.sayGoodbye();
@@ -78,7 +93,9 @@ export default class Cli {
     }
 
     afterCommand() {
+        process.stdout.write(os.EOL);
         this.navigation.printCurrentDir();
+        process.stdout.write(os.EOL);
         this.rl.prompt();
     }
 

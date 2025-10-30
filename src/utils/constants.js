@@ -114,3 +114,5 @@ export const OS_COMMANDS = {
     USERNAME: '--username',
     ARCHITECTURE: '--architecture',
 };
+
+export const OPERATION_FAILED = 'Operation failed';
