@@ -1,10 +1,9 @@
-import os from "node:os";
-import {resolvePath} from "../../utils/helpers.js";
+import {printEmptyLine, resolvePath} from "../../utils/helpers.js";
 import fs from "node:fs/promises";
 import path from "node:path";
 
 export async function rename(workPathDir, args) {
-    process.stdout.write(os.EOL);
+    printEmptyLine();
 
     const oldFilePath = resolvePath(workPathDir, args[0]);
     const newFileName = path.basename(args[1]);
@@ -13,4 +12,6 @@ export async function rename(workPathDir, args) {
 
     await fs.rename(oldFilePath, newFilePath);
     console.log(`File ${args[0]} was renamed to ${newFileName}`);
+
+    printEmptyLine();
 }

@@ -15,7 +15,7 @@ export default class Cli {
         this.rl = readline.createInterface({
             input: process.stdin,
             output: process.stdout,
-            prompt: '>',
+            prompt: '> ',
         })
 
         this.handleLine = this.handleLine.bind(this);
@@ -78,6 +78,21 @@ export default class Cli {
                 case 'rn':{
                     const workPathDir = this.navigation.getCurrentDir();
                     await this.fileOperations.rn(workPathDir, args);
+                    break;
+                }
+                case 'cp':{
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await this.fileOperations.cp(workPathDir, args);
+                    break;
+                }
+                case 'mv':{
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await this.fileOperations.mv(workPathDir, args);
+                    break;
+                }
+                case 'rm':{
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await this.fileOperations.rm(workPathDir, args);
                     break;
                 }
                 // systems

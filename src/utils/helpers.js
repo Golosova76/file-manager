@@ -1,4 +1,5 @@
 import path from "node:path";
+import os from "node:os";
 
 export function tokenizeUserInput(userInput) {
     // 1) Нормализуем ввод
@@ -39,4 +40,8 @@ export function resolvePath(workPathDir, targetPath) {
     return path.isAbsolute(targetPath)
         ? targetPath
         : path.resolve(workPathDir, targetPath);
+}
+
+export function printEmptyLine() {
+    process.stdout.write(os.EOL);
 }
