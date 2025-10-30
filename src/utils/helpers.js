@@ -1,4 +1,4 @@
-function tokenizeUserInput(userInput) {
+export function tokenizeUserInput(userInput) {
     // 1) Нормализуем ввод
     const raw = (userInput ?? '').trim();
     if (!raw) throw new Error('Invalid input');
