@@ -70,6 +70,16 @@ export default class Cli {
                     await this.fileOperations.add(workPathDir, args[0]);
                     break;
                 }
+                case 'mkdir':{
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await this.fileOperations.mkdir(workPathDir, args[0]);
+                    break;
+                }
+                case 'rn':{
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await this.fileOperations.rn(workPathDir, args);
+                    break;
+                }
                 // systems
                 case '.exit':
                     this.user.sayGoodbye();
