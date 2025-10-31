@@ -64,7 +64,7 @@ You are currently in path_to_working_directory
   ```text
   Invalid input
   ```
-- In case of an **error during execution of an operation**, the program should **print to the console**:
+- In case of an **error during execution of an operation**, the program **print to the console**:
   ```text
   Operation failed
   ```
@@ -84,7 +84,7 @@ You are currently in path_to_working_directory
 
 - Folders and files **alphabetically sorted (ascending)**
 - **Folders first**, then files
-- Each item clearly indicate its **type** (e.g., `file` or `directory`)
+- Each item indicated its **type** (e.g., `file` or `directory`)
 - **Example output:**
 
 
@@ -145,7 +145,7 @@ You are currently in path_to_working_directory
 | `compress path_to_file path_to_destination` | Compress file using Brotli algorithm (Streams API) |
 | `decompress path_to_file path_to_destination` | Decompress Brotli-compressed file (Streams API) |
 
-> 📝 **Note:** After decompressing a previously compressed file, the result must be identical to the original file.
+> 📝 **Note:** After decompressing a previously compressed file, the result identical to the original file.
 
 ---
 
