@@ -2,24 +2,25 @@
 
 ## 📖 Description
 
-Your task is to implement a **File Manager** using **Node.js APIs**.
+This project is a CLI-based **File Manager** implemented with **Node.js**.  
+The application allows a user to work with the file system, get OS information, calculate file hashes, and compress/decompress files using built-in Node.js APIs.
 
-The file manager should:
+The file manager supports:
 
-- Work using **Command Line Interface (CLI)**
-- Perform **basic file operations** (copy, move, delete, rename, etc.)
-- Utilize **Streams API**
-- Retrieve **operating system information**
-- Perform **hash calculations**
-- **Compress** and **decompress** files
+- working in the **command line**;
+- basic file operations (read, create, rename, copy, move, delete);
+- using the **Streams API** for file operations;
+- getting information about the host operating system;
+- calculating file hash;
+- compressing and decompressing files.
 
 ---
 
 ## ⚙️ Technical Requirements
 
-- **No external dependencies** are allowed
-- Use **Node.js v24.x.x** (≥ 24.14.0)
-- The application must be started via npm script:
+- No external dependencies are used.
+- The project runs on **Node.js 24.x.x** (version **24.14.0** or higher).
+- The application is started with:
 
 ```
 npm run start -- --username=your_username
@@ -31,7 +32,7 @@ npm run start -- --username=your_username
 
 ### ▶️ Start
 
-When the program starts, it should display:
+When the program starts, it must print:
 
 ```text
 Welcome to the File Manager, Username!
@@ -41,7 +42,7 @@ Welcome to the File Manager, Username!
 
 ### ⏹️ Exit
 
-When the program exits (via `Ctrl + C` or `.exit` command), it should display:
+When the user exits the application (by pressing `Ctrl + C` or by entering `.exit`), it must print:
 
 ```text
 Thank you for using File Manager, Username, goodbye!
@@ -49,8 +50,8 @@ Thank you for using File Manager, Username, goodbye!
 
 ### 📂 Working Directory
 
-- The starting directory is the user's home directory (e.g., `C:\Users\Username` on Windows)
-- At the **start** of the program and **after each end of input/operation** the current working directory must be printed in the following format:
+- The initial working directory is the current user's **home directory** (for example, on Windows: `C:\Users\Username`).
+- **At the start** of the program and **after each end of input/operation** the application must print the current working directory in the following format:
 
 ```text
 You are currently in path_to_working_directory
