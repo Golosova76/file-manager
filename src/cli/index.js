@@ -5,12 +5,17 @@ import { COMMANDS_MAP } from "../utils/constants.js";
 import { tokenizeUserInput } from "../utils/helpers.js";
 import {FileOperations} from "../file-operations/index.js";
 import os from "node:os";
+import {OperatingSystemHandler} from "../operating-system/index.js";
+import {calculateHash} from "../hash/hash.js";
+import {compressFile} from "../compress-decompress/commands/compress.js";
+import {deCompressFile} from "../compress-decompress/commands/decompress.js";
 
 export default class Cli {
     constructor() {
         this.user = new User();
         this.navigation = new Navigation();
         this.fileOperations = new FileOperations();
+        this.operatingSystemHandler = new OperatingSystemHandler();
 
         this.rl = readline.createInterface({
             input: process.stdin,
@@ -103,6 +108,27 @@ export default class Cli {
                 case 'help':
                     this.printHelp();
                     break;
+                // os
+                case 'os':
+                    this.operatingSystemHandler.run(args);
+                    break;
+                // hash
+                case 'hash':{
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await calculateHash(workPathDir,  args);
+                    break;
+                }
+                // compress
+                case 'compress': {
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await compressFile(workPathDir, args);
+                    break;
+                }
+                case 'decompress': {
+                    const workPathDir = this.navigation.getCurrentDir();
+                    await deCompressFile(workPathDir, args);
+                    break;
+                }
                 default:
                     this.user.handleInvalidInput();
             }
