@@ -19,7 +19,7 @@ The file manager supports:
 ## ⚙️ Technical Requirements
 
 - No external dependencies are used.
-- The project runs on **Node.js 24.x.x** (version **24.14.0** or higher).
+- The project runs on **Node.js 24.x.x** (version **24.10.0** or higher).
 - The application is started with:
 
 ```
@@ -32,7 +32,7 @@ npm run start -- --username=your_username
 
 ### ▶️ Start
 
-When the program starts, it must print:
+When the program starts, print to the console:
 
 ```text
 Welcome to the File Manager, Username!
@@ -42,7 +42,7 @@ Welcome to the File Manager, Username!
 
 ### ⏹️ Exit
 
-When the user exits the application (by pressing `Ctrl + C` or by entering `.exit`), it must print:
+When the user exits the application (by pressing `Ctrl + C` or by entering `.exit`), print to the console:
 
 ```text
 Thank you for using File Manager, Username, goodbye!
@@ -51,7 +51,7 @@ Thank you for using File Manager, Username, goodbye!
 ### 📂 Working Directory
 
 - The initial working directory is the current user's **home directory** (for example, on Windows: `C:\Users\Username`).
-- **At the start** of the program and **after each end of input/operation** the application must print the current working directory in the following format:
+- **At the start** of the program and **after each end of input/operation** the application print to the console the current working directory in the following format:
 
 ```text
 You are currently in path_to_working_directory
@@ -60,7 +60,7 @@ You are currently in path_to_working_directory
 
 ### ⚠️ Input & Error Handling
 
-- In case of an **unknown operation** or **invalid input** (for example, missing mandatory arguments or incorrect data), the program should **print to the console**:  
+- In case of an **unknown operation** or **invalid input** (for example, missing mandatory arguments or incorrect data), the program **print to the console**:  
   ```text
   Invalid input
   ```
@@ -82,9 +82,9 @@ You are currently in path_to_working_directory
 
 ### `ls` Output Requirements
 
-- Folders and files must be **alphabetically sorted (ascending)**
+- Folders and files **alphabetically sorted (ascending)**
 - **Folders first**, then files
-- Each item should clearly indicate its **type** (e.g., `file` or `directory`)
+- Each item clearly indicate its **type** (e.g., `file` or `directory`)
 - **Example output:**
 
 
