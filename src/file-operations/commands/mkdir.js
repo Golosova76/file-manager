@@ -8,6 +8,4 @@ export async function addMkDir(workPathDir, args) {
 
     await fs.mkdir(filePath, { recursive: false });
     console.log(`Directory ${args} was created successfully in ${workPathDir}`);
-
-    printEmptyLine();
 }

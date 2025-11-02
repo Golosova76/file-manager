@@ -8,6 +8,4 @@ export async function addFile(workPathDir, args) {
 
     await fs.writeFile(filePath, '', { flag: 'wx' });
     console.log(`File ${args} was created successfully in ${workPathDir}`);
-
-    printEmptyLine();
 }

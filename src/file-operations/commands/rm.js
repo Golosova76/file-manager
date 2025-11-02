@@ -7,7 +7,5 @@ export async function remove(workPathDir, args) {
     const filePath = resolvePath(workPathDir, args[0]);
 
     await fs.unlink(filePath);
-    console.log(`File ${args} was removed successfully`);
-
-    printEmptyLine();
+    console.log(`File ${args[0]} was removed successfully`);
 }

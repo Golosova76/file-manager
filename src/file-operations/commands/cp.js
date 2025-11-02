@@ -26,8 +26,5 @@ export async function copy(workPathDir, args) {
 
     await pipeline(readStream, writeStream);
 
-
     console.log(`File ${args[0]} was copied to ${targetPath}`);
-
-    printEmptyLine();
 }

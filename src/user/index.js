@@ -35,7 +35,6 @@ export default class User {
 
     handleOperationError(error) {
         console.log('Operation failed');
-        // console.error(error.message); // можно включить при отладке
     }
 }
 

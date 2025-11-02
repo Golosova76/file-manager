@@ -1,6 +1,9 @@
 import path from 'node:path';
+import {printEmptyLine} from "../../utils/helpers.js";
 
 export function goUp(navigation) {
+    printEmptyLine();
+
     const workDirPath = navigation.getCurrentDir(); // получаем актуальную рабочую директорию
     // получаем корневую директорию диска (самый верхний уровень файловой системы)
     const rootDirPath = path.parse(workDirPath).root;

@@ -2,7 +2,7 @@ import User from "../user/index.js";
 import { Navigation } from "../navigation-pwd/index.js";
 import * as readline from "node:readline";
 import { COMMANDS_MAP } from "../utils/constants.js";
-import { tokenizeUserInput } from "../utils/helpers.js";
+import {printEmptyLine, tokenizeUserInput} from "../utils/helpers.js";
 import {FileOperations} from "../file-operations/index.js";
 import os from "node:os";
 import {OperatingSystemHandler} from "../operating-system/index.js";
@@ -50,8 +50,9 @@ export default class Cli {
 
             const meta = COMMANDS_MAP[commands];
             if (!meta || args.length < meta.requiredArgs) {
+                printEmptyLine();
                 this.user.handleInvalidInput();
-                return this.afterCommand();
+                return;
             }
 
             switch (commands) {

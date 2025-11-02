@@ -12,6 +12,4 @@ export async function rename(workPathDir, args) {
 
     await fs.rename(oldFilePath, newFilePath);
     console.log(`File ${args[0]} was renamed to ${newFileName}`);
-
-    printEmptyLine();
 }
